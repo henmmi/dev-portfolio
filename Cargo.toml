@@ -1,0 +1,10 @@
+[package]
+name = "yew-portfolio"
+version = "0.1.0"
+authors = ["Henry Nguyen <henmmi@outlook.com>"]
+edition = "2021"
+
+[dependencies]
+wasm-bindgen = "0.2.89"
+yew = { version="0.21.0", features=["csr"] }
+yew-router = "0.18.0"
