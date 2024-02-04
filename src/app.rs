@@ -1,9 +1,11 @@
-use crate::components::{home::Home, contact::Contact, projects::Projects, nav::Nav};
+use crate::components::{
+    contact::Contact, experience::Experience, home::Home, nav::Nav, projects::Projects,
+};
 use yew::prelude::*;
 use yew_router::prelude::*;
 
 #[derive(Clone, Routable, PartialEq)]
-pub enum Route{
+pub enum Route {
     #[at("/")]
     Home,
     #[at("/projects")]
@@ -11,21 +13,31 @@ pub enum Route{
     #[at("/contact")]
     Contact,
 }
-/// This is the switch function. It is used by the yew_router::Switch component to determine which component to render based on the current route.
-pub fn switch(routes: Route) -> Html {
-    match routes {
-        Route::Home => html! {<Home/>},
-        Route::Projects => html! {<Projects/>},
-        Route::Contact => html! {<Contact/>},
-    }
-}
 
 #[function_component(App)]
 pub fn app() -> Html {
     html! {
         <BrowserRouter>
-            <Nav/>
-            <Switch<Route> render={switch}/>
+        <header class="py-4"></header>
+        <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
+            <div class="lg:flex lg:justify-between lg:gap-4">
+                <div class="sm:w-1/3  md:1/4 w-full flex-shrink flex-grow-0 p-4">
+                    <div class="sticky top-0 p-4 w-full">
+                        <ul class="flex sm:flex-col overflow-hidden content-center justify-between">
+                            <Nav/>
+                        </ul>
+                    </div>
+                </div>
+                <main role="main" class=" sm:w-1/2 w-full h-full flex-grow p-3 overflow-auto flex-col items-center justify-center max-w-2xl">
+                    <Home/>
+                    <Experience/>
+                    <Projects/>
+                    <Contact/>
+                </main>
+            </div>
+        </div>
+            <footer class="mt-auto">
+            </footer>
         </BrowserRouter>
     }
 }

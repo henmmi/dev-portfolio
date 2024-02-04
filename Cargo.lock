@@ -1172,6 +1172,7 @@ dependencies = [
 name = "yew-portfolio"
 version = "0.1.0"
 dependencies = [
+ "implicit-clone",
  "wasm-bindgen",
  "yew",
  "yew-router",
