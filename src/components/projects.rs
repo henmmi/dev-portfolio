@@ -27,13 +27,14 @@ fn project_item(props: &ProjectsProps) -> Html {
     }
 }
 
-
 #[function_component(Projects)]
-pub fn projects() -> Html{
+pub fn projects() -> Html {
     let valorant_web_radar = ProjectsProps {
         image: IString::from("assets/valorant_logo.png"),
         title: IString::from("Valorant Web Radar"),
-        description: IString::from("A web application that displays agent data and other game information on a radar map."),
+        description: IString::from(
+            "A web application that displays agent data and other game information on a radar map.",
+        ),
         tech: IString::from("Rust, WebAssembly, HTML, CSS (Bootstrap)"),
         url: IString::from("https://github.com/henmmi/valorant-web-radar"),
     };

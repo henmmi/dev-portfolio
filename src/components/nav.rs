@@ -1,10 +1,10 @@
+use crate::app::Route;
 /// This file contains the navigation bar component.
 use yew::prelude::*;
 use yew_router::prelude::Link;
-use crate::app::Route;
 
 /// This struct contains the data for the navigation bar.
-struct NavigationBar{
+struct NavigationBar {
     link: Route,
     string: String,
     is_active: bool,
@@ -14,21 +14,21 @@ struct NavigationBar{
 /// This function contains the navigation bar component.
 #[function_component(Nav)]
 pub fn nav() -> Html {
-    let nav_items = use_state(||{
+    let nav_items = use_state(|| {
         vec![
-            NavigationBar{
+            NavigationBar {
                 link: Route::Home,
                 string: "Home".to_string(),
                 is_active: false,
                 id: 0,
             },
-            NavigationBar{
+            NavigationBar {
                 link: Route::Projects,
                 string: "Projects".to_string(),
                 is_active: false,
                 id: 1,
             },
-            NavigationBar{
+            NavigationBar {
                 link: Route::Contact,
                 string: "Contact".to_string(),
                 is_active: false,
@@ -59,6 +59,6 @@ pub fn nav() -> Html {
                 </div>
             </div>
         </div>
-        
+
     }
 }

@@ -1,8 +1,8 @@
 pub mod aboutme;
-pub(crate) mod nav;
-mod socials;
-pub(crate) mod home;
-pub(crate) mod contact;
-pub(crate) mod projects;
-pub(crate) mod experience;
+pub mod contact;
+pub mod experience;
+pub mod home;
+pub mod nav;
+pub mod projects;
 mod skills;
+mod socials;

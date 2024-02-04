@@ -1,6 +1,5 @@
-
-use yew::prelude::*;
 use implicit_clone::sync::IString;
+use yew::prelude::*;
 
 #[derive(Clone, PartialEq, Properties)]
 pub struct ExperienceProps {
@@ -16,7 +15,15 @@ pub struct ExperienceProps {
     tech: IString,
 }
 #[function_component(ExperienceItem)]
-pub fn experience_item(ExperienceProps { title, company, date, description, tech }: &ExperienceProps) -> Html {
+pub fn experience_item(
+    ExperienceProps {
+        title,
+        company,
+        date,
+        description,
+        tech,
+    }: &ExperienceProps,
+) -> Html {
     let company = company.as_str().to_string();
     let title = title.as_str().to_string();
     let date = date.as_str().to_string();

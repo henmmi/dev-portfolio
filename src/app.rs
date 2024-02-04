@@ -1,9 +1,11 @@
-use crate::components::{home::Home, contact::Contact, projects::Projects, nav::Nav, experience::Experience};
+use crate::components::{
+    contact::Contact, experience::Experience, home::Home, nav::Nav, projects::Projects,
+};
 use yew::prelude::*;
 use yew_router::prelude::*;
 
 #[derive(Clone, Routable, PartialEq)]
-pub enum Route{
+pub enum Route {
     #[at("/")]
     Home,
     #[at("/projects")]
