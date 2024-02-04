@@ -40,7 +40,7 @@ pub fn nav() -> Html {
         <div>
             <div class="w-full max-w-sm">
                 <div class="flex flex-col items-center pb-10 pt-4">
-                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="assets/bepo.png" alt="Bonnie image"/>
+                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="assets/bepo.png" alt="Profile"/>
                     <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{"Henry Nguyen"}</h5>
                     <span class="text-sm text-gray-500 dark:text-gray-400">{"Software Developer"}</span>
                     <div class="flex mt-4 md:mt-6">

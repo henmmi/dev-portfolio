@@ -31,7 +31,7 @@ fn project_item(props: &ProjectsProps) -> Html {
 #[function_component(Projects)]
 pub fn projects() -> Html{
     let valorant_web_radar = ProjectsProps {
-        image: IString::from("assets/val_radar.png"),
+        image: IString::from("assets/valorant_logo.png"),
         title: IString::from("Valorant Web Radar"),
         description: IString::from("A web application that displays agent data and other game information on a radar map."),
         tech: IString::from("Rust, WebAssembly, HTML, CSS (Bootstrap)"),
@@ -41,7 +41,7 @@ pub fn projects() -> Html{
         image: IString::from("assets/matlab_logo.png"),
         title: IString::from("Lightsheet GUI"),
         description: IString::from("A desktop application that captures multiple images as a specimen is moved through the focal plane."),
-        tech: IString::from("Matlab"),
+        tech: IString::from("MATLAB"),
         url: IString::from("https://github.com/henmmi/lightsheet-gui-matlab"),
     };
     html! {

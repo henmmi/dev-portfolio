@@ -5,3 +5,4 @@ pub(crate) mod home;
 pub(crate) mod contact;
 pub(crate) mod projects;
 pub(crate) mod experience;
+mod skills;

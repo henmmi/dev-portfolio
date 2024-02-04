@@ -23,7 +23,7 @@ pub fn experience_item(ExperienceProps { title, company, date, description, tech
     let description = description.as_str().to_string();
     let tech = tech.as_str().to_string();
     html! {
-        <div class="container grid grid-cols-[2fr_3fr] py-4">
+        <div class="container grid lg:grid-cols-[2fr_3fr] sm:space-py-2 lg:py-4">
             <div>
                 <p class="text-gray-500">{date}</p>
             </div>
@@ -50,7 +50,7 @@ pub fn experience() -> Html {
         company: IString::from("IPAS (Institute of Photonics and Advanced Sensing)"),
         date: IString::from("Nov 2022 - Mar 2023"),
         description: IString::from("Joined the Centre of Light for Life to optimise and streamline research processes by customising software to match requirements."),
-        tech: IString::from("Matlab • Python"),
+        tech: IString::from("MATLAB • Python"),
     };
     html! {
         <div>

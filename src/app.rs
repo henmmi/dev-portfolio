@@ -11,19 +11,12 @@ pub enum Route{
     #[at("/contact")]
     Contact,
 }
-/// This is the switch function. It is used by the yew_router::Switch component to determine which component to render based on the current route.
-pub fn switch(routes: Route) -> Html {
-    match routes {
-        Route::Home => html! {<Home/>},
-        Route::Projects => html! {<Projects/>},
-        Route::Contact => html! {<Contact/>},
-    }
-}
 
 #[function_component(App)]
 pub fn app() -> Html {
     html! {
         <BrowserRouter>
+        <header class="py-4"></header>
         <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
             <div class="lg:flex lg:justify-between lg:gap-4">
                 <div class="sm:w-1/3  md:1/4 w-full flex-shrink flex-grow-0 p-4">
