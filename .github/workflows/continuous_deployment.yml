@@ -1,10 +1,12 @@
-name: Continuous deployment
-
+name: deploy
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: ["master"]
   pull_request:
     branches: ["master"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -24,10 +26,7 @@ jobs:
             ~/.cargo/registry
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+
       - name: Install Trunk
         uses: jetli/trunk-action@v0.4.0
         with:
