@@ -27,12 +27,15 @@ jobs:
             ~/.cargo/registry
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
+          
+      - name: Install Trunk
+        uses: jetli/trunk-action@v0.4.0
+        with:
+          # Optional version of trunk to install(eg. 'v0.16.0', 'latest')
+          version: "latest"
+          
       - name: Install WebAssembly target
         run: rustup target add wasm32-unknown-unknown
-
-      - name: Install Trunk
-        run: cargo install trunk
         
       - name: Install tailwindcss binary
         run: |
