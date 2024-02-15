@@ -3,8 +3,8 @@ curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/t
 mv tailwindcss-linux-x64 tailwindcss
 chmod +x tailwindcss
 
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-PATH=$HOME/.cargo/env
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
 
 
 rustup target add wasm32-unknown-unknown
