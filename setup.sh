@@ -1,4 +1,6 @@
+#!/bin/bash
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+PATH=$PATH:/vercel/.cargo/bin
 
 cargo install --locked trunk
 
