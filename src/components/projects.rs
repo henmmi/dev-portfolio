@@ -2,7 +2,7 @@ use implicit_clone::sync::IString;
 use yew::prelude::*;
 #[derive(Clone, PartialEq, Properties)]
 pub struct ProjectsProps {
-    image: IString,
+    date: IString,
     title: IString,
     description: IString,
     tech: IString,
@@ -13,16 +13,18 @@ pub struct ProjectsProps {
 fn project_item(props: &ProjectsProps) -> Html {
     let url = props.url.to_string();
     html! {
-        <div class="rounded-lg hover:bg-gray-800 h-full">
-            <a href={url} target="_blank" class="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl h-full">
-                <img class="object-cover h-64 w-64 rounded-t-lg md:rounded-none md:rounded-s-lg" src={props.image.to_string()} alt="" />
-                <div class="flex flex-col justify-between p-4 leading-normal h-full">
-                    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{props.title.to_string()}</h5>
-                    <p class="text-sm mb-3 font-normal text-gray-700 dark:text-gray-400">{props.description.to_string()}</p>
-                    <p class="text-sm font-normal text-gray-700 dark:text-gray-400">{props.tech.to_string()}</p>
-                    <p class="text-sm font-normal text-gray-700 dark:text-gray-400">{"Click to view source code."}</p>
+        <div class="container grid lg:grid-cols-[2fr_3fr] sm:space-py-2 lg:py-4">
+                <div>
+                    <p class="text-gray-500">{props.date.to_string()}</p>
                 </div>
-            </a>
+                <div>
+                    <a class="flex hover:underline space-x-1.5" href={url} target="_blank">
+                            <h2 class="font-bold tracking-tight text-gray-900 dark:text-white">{props.title.to_string()}</h2>
+                            <img class="w-auto sm:h-0.5 lg:h-4" src="assets/arrow-white.svg"/>
+                    </a>
+                    <p class="text-sm font-normal text-gray-200">{props.description.to_string()}</p>
+                    <p class="text-sm font-normal text-gray-700 dark:text-gray-400">{props.tech.to_string()}</p>
+                </div>
         </div>
     }
 }
@@ -30,16 +32,16 @@ fn project_item(props: &ProjectsProps) -> Html {
 #[function_component(Projects)]
 pub fn projects() -> Html {
     let valorant_web_radar = ProjectsProps {
-        image: IString::from("assets/valorant_logo.png"),
+        date: IString::from("Sep 2023 - Oct 2023"),
         title: IString::from("Valorant Web Radar"),
         description: IString::from(
             "A web application that displays agent data and other game information on a radar map.",
         ),
-        tech: IString::from("Rust, WebAssembly, HTML, CSS (Bootstrap)"),
+        tech: IString::from("Rust • WebAssembly • HTML • CSS (Bootstrap)"),
         url: IString::from("https://github.com/henmmi/valorant-web-radar"),
     };
     let lightsheet_project = ProjectsProps {
-        image: IString::from("assets/matlab_logo.png"),
+        date: IString::from("Dec 2022 - Feb 2023"),
         title: IString::from("Lightsheet GUI"),
         description: IString::from("A desktop application that captures multiple images as a specimen is moved through the focal plane."),
         tech: IString::from("MATLAB"),
@@ -51,8 +53,8 @@ pub fn projects() -> Html {
                 <a>{"Projects"}</a>
             </h1>
             <div class="py-4 space-y-4">
-            <ProjectItem image={valorant_web_radar.image.clone()} title={valorant_web_radar.title.clone()} description={valorant_web_radar.description.clone()} tech={valorant_web_radar.tech.clone()} url={valorant_web_radar.url.clone()} />
-            <ProjectItem image={lightsheet_project.image.clone()} title={lightsheet_project.title.clone()} description={lightsheet_project.description.clone()} tech={lightsheet_project.tech.clone()} url={lightsheet_project.url.clone()} />
+            <ProjectItem date={valorant_web_radar.date.clone()} title={valorant_web_radar.title.clone()} description={valorant_web_radar.description.clone()} tech={valorant_web_radar.tech.clone()} url={valorant_web_radar.url.clone()} />
+            <ProjectItem date={lightsheet_project.date.clone()} title={lightsheet_project.title.clone()} description={lightsheet_project.description.clone()} tech={lightsheet_project.tech.clone()} url={lightsheet_project.url.clone()} />
             </div>
         </div>
     }

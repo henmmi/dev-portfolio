@@ -34,7 +34,7 @@ pub fn experience_item(
             <div>
                 <p class="text-gray-500">{date}</p>
             </div>
-            <div class="">
+            <div>
                 <h2 class="font-bold">{title}</h2>
                 <h3 class="text-gray-400">{company}</h3>
                 <p class="text-justify text-sm">{description}</p>
