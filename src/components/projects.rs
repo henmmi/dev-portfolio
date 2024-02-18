@@ -20,7 +20,7 @@ fn project_item(props: &ProjectsProps) -> Html {
                 <div>
                     <a class="flex hover:underline space-x-1.5" href={url} target="_blank">
                             <h2 class="font-bold tracking-tight text-gray-900 dark:text-white">{props.title.to_string()}</h2>
-                            <img class="w-auto sm:h-0.5 lg:h-4" src="assets/arrow-white.svg"/>
+                            <img class="h-4" src="assets/arrow-white.svg"/>
                     </a>
                     <p class="text-sm font-normal text-gray-200">{props.description.to_string()}</p>
                     <p class="text-sm font-normal text-gray-700 dark:text-gray-400">{props.tech.to_string()}</p>
