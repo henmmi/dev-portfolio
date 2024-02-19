@@ -1,61 +1,46 @@
-use crate::app::Route;
+use crate::components::socials::Socials;
 /// This file contains the navigation bar component.
 use yew::prelude::*;
-use yew_router::prelude::Link;
-
-/// This struct contains the data for the navigation bar.
-struct NavigationBar {
-    link: Route,
-    string: String,
-    is_active: bool,
-    id: u32,
-}
 
 /// This function contains the navigation bar component.
 #[function_component(Nav)]
 pub fn nav() -> Html {
-    let nav_items = use_state(|| {
-        vec![
-            NavigationBar {
-                link: Route::Home,
-                string: "Home".to_string(),
-                is_active: false,
-                id: 0,
-            },
-            NavigationBar {
-                link: Route::Projects,
-                string: "Projects".to_string(),
-                is_active: false,
-                id: 1,
-            },
-            NavigationBar {
-                link: Route::Contact,
-                string: "Contact".to_string(),
-                is_active: false,
-                id: 2,
-            },
-        ]
-    });
     html! {
         <div>
-            <div class="w-full max-w-sm">
-                <div class="flex flex-col items-center pb-10 pt-4">
-                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="assets/bepo.png" alt="Profile"/>
-                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{"Henry Nguyen"}</h5>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">{"Software Developer"}</span>
-                    <div class="flex mt-4 md:mt-6">
-                        <nav class="navigation-bar container-fluid">
-                        <ul class="nav-list">
-                        {
-                            nav_items.iter().map(|nav_item| {
-                                html!{<li key={nav_item.id} class={classes!("nav-item", if nav_item.is_active { "active" } else { "" })}>
-                                <Link<Route> to={nav_item.link.clone()}>{nav_item.string.clone()}</Link<Route>>
-                                    </li>}
-                            }).collect::<Html>()
-                        }
-                        </ul>
-                        </nav>
+            <div class="sticky top-0 w-full max-w-sm">
+                <div class="grid grid-cols-[1fr_3fr] justify-between items-center">
+                    <img class="w-20 h-20 rounded-full shadow-lg" src="assets/bepo.png" alt="Profile"/>
+                    <div>
+                        <h1 class="font-bold text-3xl md:text-xl lg:text-2xl leading-8">{"Henry Nguyen"}</h1>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">{"Software Engineer"}</p>
                     </div>
+                </div>
+                <div class="hidden lg:flex mt-4 lg:mt-6">
+                    <nav>
+                    <ul class="flex-col">
+                        <li>
+                            <a class="flex py-2 text-sm font-medium text-gray-900 dark:text-white hover:underline space-x-1.5" href="#about">
+                                <h2>{"About"}</h2>
+                                <img class="h-5" src="assets/arrow-right.svg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex py-2 text-sm font-medium text-gray-900 dark:text-white hover:underline space-x-1.5" href="#experiences-container">
+                                <h2>{"Experience"}</h2>
+                                <img class="h-5" src="assets/arrow-right.svg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex py-2 text-sm font-medium text-gray-900 dark:text-white hover:underline space-x-1.5" href="#projects-container">
+                                <h2>{"Projects"}</h2>
+                                <img class="h-5" src="assets/arrow-right.svg"/>
+                            </a>
+                        </li>
+                    </ul>
+                    </nav>
+                </div>
+                <div class="bottom-0">
+                    <Socials/>
                 </div>
             </div>
         </div>
