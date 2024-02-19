@@ -8,4 +8,17 @@ html{
 
 body{
     color: white;
+    line-height: 1.5;
+}
+
+h2{
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: clamp(1rem, 0vw, 3rem);
+    margin-bottom: 0.5rem;
+}
+
+.content-header{
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
 }

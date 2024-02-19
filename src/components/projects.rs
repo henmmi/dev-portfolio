@@ -13,14 +13,14 @@ pub struct ProjectsProps {
 fn project_item(props: &ProjectsProps) -> Html {
     let url = props.url.to_string();
     html! {
-        <div class="container grid lg:grid-cols-[2fr_3fr] sm:space-py-2 lg:py-4">
+        <div class="container grid lg:grid-cols-[1.5fr_3fr] sm:space-py-2 lg:py-4 mb-10">
                 <div>
                     <p class="text-gray-500">{props.date.to_string()}</p>
                 </div>
                 <div>
                     <a class="flex hover:underline space-x-1.5" href={url} target="_blank">
-                            <h2 class="font-bold tracking-tight text-gray-900 dark:text-white">{props.title.to_string()}</h2>
-                            <img class="w-auto sm:h-0.5 lg:h-4" src="assets/arrow-white.svg"/>
+                            <h2>{props.title.to_string()}</h2>
+                            <img class="h-4" src="assets/arrow-white.svg"/>
                     </a>
                     <p class="text-sm font-normal text-gray-200">{props.description.to_string()}</p>
                     <p class="text-sm font-normal text-gray-700 dark:text-gray-400">{props.tech.to_string()}</p>
@@ -48,10 +48,8 @@ pub fn projects() -> Html {
         url: IString::from("https://github.com/henmmi/lightsheet-gui-matlab"),
     };
     html! {
-        <div>
-            <h1 class="text-xl font-bold tracking-tight text-slate-200 sm:text-2xl">
-                <a>{"Projects"}</a>
-            </h1>
+        <div id="projects-container">
+            <h2 class="content-header">{"Projects"}</h2>
             <div class="py-4 space-y-4">
             <ProjectItem date={valorant_web_radar.date.clone()} title={valorant_web_radar.title.clone()} description={valorant_web_radar.description.clone()} tech={valorant_web_radar.tech.clone()} url={valorant_web_radar.url.clone()} />
             <ProjectItem date={lightsheet_project.date.clone()} title={lightsheet_project.title.clone()} description={lightsheet_project.description.clone()} tech={lightsheet_project.tech.clone()} url={lightsheet_project.url.clone()} />

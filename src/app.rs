@@ -1,43 +1,27 @@
-use crate::components::{
-    contact::Contact, experience::Experience, home::Home, nav::Nav, projects::Projects,
-};
+use crate::components::nav::Nav;
+use crate::components::{experience::Experience, home::Home, projects::Projects};
 use yew::prelude::*;
 use yew_router::prelude::*;
-
-#[derive(Clone, Routable, PartialEq)]
-pub enum Route {
-    #[at("/")]
-    Home,
-    #[at("/projects")]
-    Projects,
-    #[at("/contact")]
-    Contact,
-}
 
 #[function_component(App)]
 pub fn app() -> Html {
     html! {
         <BrowserRouter>
-        <header class="py-4"></header>
-        <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
-            <div class="lg:flex lg:justify-between lg:gap-4">
-                <div class="sm:w-1/3  md:1/4 w-full flex-shrink flex-grow-0 p-4">
-                    <div class="sticky top-0 p-4 w-full">
-                        <ul class="flex sm:flex-col overflow-hidden content-center justify-between">
-                            <Nav/>
-                        </ul>
-                    </div>
-                </div>
-                <main role="main" class=" sm:w-1/2 w-full h-full flex-grow p-3 overflow-auto flex-col items-center justify-center max-w-2xl">
+        <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0 font-sans">
+            <div class="lg:flex lg:gap-4 lg:justify-between">
+                <header class="sticky lg:flex-col lg:1/2 w-full lg:top-0 lg:py-24 lg:max-h-screen">
+                    <ul class="content-center justify-center items-center">
+                        <Nav/>
+                    </ul>
+                </header>
+                <main role="main" class="w-full lg:py-24">
                     <Home/>
                     <Experience/>
                     <Projects/>
-                    <Contact/>
                 </main>
             </div>
         </div>
-            <footer class="mt-auto">
-            </footer>
+        <footer class="mt-auto"></footer>
         </BrowserRouter>
     }
 }

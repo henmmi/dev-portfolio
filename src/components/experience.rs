@@ -30,14 +30,14 @@ pub fn experience_item(
     let description = description.as_str().to_string();
     let tech = tech.as_str().to_string();
     html! {
-        <div class="container grid lg:grid-cols-[2fr_3fr] sm:space-py-2 lg:py-4">
+        <div class="container grid lg:grid-cols-[1.5fr_3fr] sm:space-py-2 lg:py-4 mb-10">
             <div>
                 <p class="text-gray-500">{date}</p>
             </div>
             <div>
-                <h2 class="font-bold">{title}</h2>
+                <h2>{title}</h2>
                 <h3 class="text-gray-400">{company}</h3>
-                <p class="text-justify text-sm">{description}</p>
+                <p class="text-sm">{description}</p>
                 <p class="text-gray-400 text-sm">{tech}</p>
             </div>
         </div>
@@ -60,8 +60,8 @@ pub fn experience() -> Html {
         tech: IString::from("MATLAB • Python"),
     };
     html! {
-        <div>
-            <h1 class="text-xl font-bold tracking-tight text-slate-200 sm:text-2xl">{"Experience"}</h1>
+        <div id="experiences-container">
+            <h2 class="content-header">{"Experience"}</h2>
             <ExperienceItem title={&fossec.title} company={&fossec.company} date={&fossec.date} description={&fossec.description} tech={&fossec.tech} />
             <ExperienceItem title={&institute.title} company={&institute.company} date={&institute.date} description={&institute.description} tech={&institute.tech} />
         </div>

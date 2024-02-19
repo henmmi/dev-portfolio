@@ -1,8 +1,8 @@
-use crate::components::aboutme::AboutMe;
+use crate::components::about::About;
 use yew::prelude::*;
 #[function_component(Home)]
 pub fn home() -> Html {
     html! {
-        <AboutMe />
+        <About />
     }
 }
