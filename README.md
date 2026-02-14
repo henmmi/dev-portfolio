@@ -12,3 +12,10 @@ Summary of the technologies used:
 - <a href="https://www.rust-lang.org/"><img src="https://rustacean.net/assets/rustacean-orig-noshadow.svg" width="16" height="16" alt="Rust Logo"></a> Rust: The programming language used for the project.
 - <a href="https://yew.rs/"><img src="https://yew.rs/img/logo.png" width="16" height="16" alt="Yew Logo"></a> Yew: A modern Rust framework for building client-side web applications.
 - <a href="https://trunkrs.dev/"><img src="https://trunkrs.dev/rustacean-flat-happy.svg" width="16" height="16" alt="Trunk Logo"></a> Trunk: A build tool and development server for WebAssembly projects in Rust.
+
+# Setup
+This is set up with the nix package manager to take advantage of flakes and direnv to load all dependencies.
+```
+direnv allow
+trunk serve
+```
