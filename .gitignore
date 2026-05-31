@@ -1,4 +1,5 @@
 target*
 dist*
 /app.css
+/tailwindcss
 .direnv*
